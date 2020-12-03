@@ -4,10 +4,10 @@ Isn't it just the worst when you come back from grocery shopping only to realize
 
 ## Technologies
 
-- __S__QL
-- __E__xpress
-- __R__eact
-- __N__ode
+- *S*QL
+- *E*xpress
+- *R*eact
+- *N*ode
 
 ## Requirements
 
@@ -33,7 +33,7 @@ The `Reset` button should clear the purchased status from all items, allowing th
 
 ### Tips for Teams
 
-- Don't forget to use branches and GitHub Pull-Requests. Make sure to protect your `master` branch as you setup the project.
+- Remember to use branches and GitHub Pull-Requests. Make sure to protect your `master` branch as you setup the project.
 
 - Plan your database structure as a group, making sure that you consider all of your required features.
 
@@ -62,4 +62,4 @@ The `Reset` button should clear the purchased status from all items, allowing th
 
 - Currently, if you typo something, it must be removed and re-added to fix it. An edit feature would be a great enhancement. Add an `Edit` button which will have the existing data show in the input form at the top of the page to allow an easier edit. 
 
-  > Hint: For the edit, add a boolean indicator to the component state to indicate if the item is in add or edit mode. 
+  > Hint: For the edit, add a boolean indicator to the component state to indicate if the item is in view or edit mode. 
