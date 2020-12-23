@@ -37,6 +37,8 @@ The `Reset` button should clear the purchased status from all items, allowing th
 
 - Plan your database structure as a group, making sure that you consider all of your required features.
 
+- Plan to break down the UI (user interface) into smaller components. Discussing this upfront as a team is very helpful as you start to discuss tasks.
+
 - Consider the naming for routes while planning to make sure everyone has the same expecations. Note the url in the tasks. 
 
 - __Don't__ have team members work *only* on client or *only* on server code. Everyone needs to practice working with both sides. One option is to break features out as slices that include both the client and server code. Another is to create separate tasks for client and server code, but plan so that all team members get both a client task and a server task, even if they are for different features.
