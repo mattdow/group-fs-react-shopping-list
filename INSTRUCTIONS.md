@@ -51,7 +51,7 @@ The `Reset` button should clear the purchased status from all items, allowing th
 
 ## Stretch Features 
 
-- Update this Readme file to use the
+- Update this Readme file to use the [Template](https://github.com/PrimeAcademy/readme-template) and fill in the sections.
 
 - Add a confirmation dialog to the reset and clear button so that when the user clicks,  they are prompted to confirm whether they *really* want to perform that action. (Check out [Sweet Alerts](https://www.npmjs.com/package/@sweetalert/with-react).)
 
