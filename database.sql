@@ -2,7 +2,7 @@
 -- It is also helpful to include some test data
 -- Database name group-grocery-list
 
-CREATE TABLE groceries (
+CREATE TABLE list (
     id SERIAL PRIMARY KEY,
     item VARCHAR(80) NOT NULL,
     quantity FLOAT NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE groceries (
     purchased BOOLEAN DEFAULT FALSE
 );
 
-INSERT INTO groceries (item, quantity, unit)
+INSERT INTO list (item, quantity, unit)
 VALUES   ('Apples', 5, 'lbs'),
         ('Bread', 1, 'loaf'),
         ('Milk', 1, 'gallon'),
