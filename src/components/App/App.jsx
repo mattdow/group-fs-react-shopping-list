@@ -4,6 +4,8 @@ import axios from "axios";
 import Header from '../Header/Header.jsx'
 import './App.css';
 import GroceryList from '../GroceryList/GroceryList.jsx'
+import GroceryForm from '../GroceryForm/GroceryForm';
+
 
 function App() {
     let [groceryList, setGroceryList] = useState([]);
@@ -20,7 +22,7 @@ function App() {
         });
     };
 
-      const addItem = () => {
+      const addItem = (newGroceryObject) => {
     axios
       .post("/list", newGroceryObject)
       .then((response) => {
@@ -41,10 +43,14 @@ function App() {
             <Header />
             <main>
                 <p>Under Construction...</p>
+
+                <GroceryForm addItem={addItem} />
+
                 <GroceryList 
                     groceryList={groceryList}
                     getGroceryList={getGroceryList}
                 />
+
             </main>
         </div>
         );
