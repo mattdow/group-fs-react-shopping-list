@@ -7,6 +7,7 @@ import GroceryList from '../GroceryList/GroceryList.jsx'
 
 function App() {
     let [groceryList, setGroceryList] = useState([]);
+
     const getGroceryList = () => {
         axios
         .get("/list")
@@ -19,9 +20,22 @@ function App() {
         });
     };
 
-    useEffect(() => {
+      const addItem = () => {
+    axios
+      .post("/list", newGroceryObject)
+      .then((response) => {
+        console.log("New object ->", newGroceryObject);
+        getGroceryList();
+      })
+      .catch((err) => {
+        console.log("Error Posting ->", err);
+      });
+  };
+
+      useEffect(() => {
         getGroceryList();
       }, []);
+
     return (
         <div className="App">
             <Header />
@@ -34,8 +48,6 @@ function App() {
             </main>
         </div>
         );
-
-
 }
 
 export default App;
