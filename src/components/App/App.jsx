@@ -22,6 +22,18 @@ function App() {
       });
   };
 
+  const addItem = () => {
+    axios
+      .post("/list", newGroceryObject)
+      .then((response) => {
+        console.log("New object ->", newGroceryObject);
+        getGroceryList();
+      })
+      .catch((err) => {
+        console.log("Error Posting ->", err);
+      });
+  };
+
   return (
     <div className="App">
       <Header />
