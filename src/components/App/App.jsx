@@ -22,7 +22,7 @@ function App() {
         });
     };
 
-      const addItem = () => {
+      const addItem = (newGroceryObject) => {
     axios
       .post("/list", newGroceryObject)
       .then((response) => {

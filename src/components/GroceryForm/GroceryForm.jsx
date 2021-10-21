@@ -29,13 +29,12 @@ function GroceryForm ({addItem}) {
         <>
         <h2>Add an Item</h2>
         <form onSubmit={handleSubmit}>
-        <label>Name:</label>
         <input
           type="text"
           placeholder="grocery item"
           value={newItem}
           onChange={(evt) => setNewItem(evt.target.value)}
-        />  
+        /> 
         <input
           type="number"
           placeholder="How many?"
