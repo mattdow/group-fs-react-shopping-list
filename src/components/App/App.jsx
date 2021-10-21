@@ -1,27 +1,12 @@
-<<<<<<< HEAD
+
 import React, {useEffect, useState } from 'react';
 import axios from "axios";
 import Header from '../Header/Header.jsx'
 import './App.css';
 import GroceryList from '../GroceryList/GroceryList.jsx'
 
-=======
-
-
-
-
-
-  
->>>>>>> master
-
-  useEffect(() => {
-    getGroceryList();
-  }, []);
-
-<<<<<<< HEAD
 function App() {
     let [groceryList, setGroceryList] = useState([]);
-=======
     const getGroceryList = () => {
         axios
         .get("/list")
@@ -33,6 +18,10 @@ function App() {
             console.log("Error getting groceries", err);
         });
     };
+
+    useEffect(() => {
+        getGroceryList();
+      }, []);
     return (
         <div className="App">
             <Header />
@@ -46,7 +35,7 @@ function App() {
         </div>
         );
 
->>>>>>> master
+
 }
 
 export default App;

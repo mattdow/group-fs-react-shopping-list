@@ -8,7 +8,7 @@ function GroceryList({groceryList, getGroceryList}) {
         <ul>
             { groceryList.map(item => (
                 <li key={item.id}>
-                    Item:{item.item} Qty:{item.quantity} Number:{item.number} Purchased:{item.purchased}
+                    Item:{item.item} Qty:{item.quantity} Unit:{item.unit} Purchased:{item.purchased}
                 </li>
             )) 
             }
