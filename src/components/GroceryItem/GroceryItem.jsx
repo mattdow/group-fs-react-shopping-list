@@ -4,6 +4,10 @@ import './GroceryItem.css';
 
 function GroceryItem ({item, getGroceryList}) {
 
+    const deleteItem = () => {
+        let idToDelete = item.id;
+        console.log();
+    }
 
 
     return (
