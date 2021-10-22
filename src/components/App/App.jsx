@@ -1,28 +1,26 @@
-
-import React, {useEffect, useState } from 'react';
+import "./App.css";
 import axios from "axios";
-import Header from '../Header/Header.jsx'
-import './App.css';
-import GroceryList from '../GroceryList/GroceryList.jsx'
-import GroceryForm from '../GroceryForm/GroceryForm';
-
+import Header from "../Header/Header.jsx";
+import React, { useEffect, useState } from "react";
+import GroceryForm from "../GroceryForm/GroceryForm";
+import GroceryList from "../GroceryList/GroceryList.jsx";
 
 function App() {
-    let [groceryList, setGroceryList] = useState([]);
+  let [groceryList, setGroceryList] = useState([]);
 
-    const getGroceryList = () => {
-        axios
-        .get("/list")
-        .then((response) => {
-            console.log("Grocery list ->", response.data);
-            setGroceryList(response.data);
-        })
-        .catch((err) => {
-            console.log("Error getting groceries", err);
-        });
-    };
+  const getGroceryList = () => {
+    axios
+      .get("/list")
+      .then((response) => {
+        console.log("Grocery list ->", response.data);
+        setGroceryList(response.data);
+      })
+      .catch((err) => {
+        console.log("Error getting groceries", err);
+      });
+  };
 
-      const addItem = (newGroceryObject) => {
+  const addItem = (newGroceryObject) => {
     axios
       .post("/list", newGroceryObject)
       .then((response) => {
@@ -34,24 +32,23 @@ function App() {
       });
   };
 
-      useEffect(() => {
-        getGroceryList();
-      }, []);
+  useEffect(() => {
+    getGroceryList();
+  }, []);
 
-    return (
-        <div className="App">
-            <Header />
-            <main>
-                <GroceryForm addItem={addItem} />
+  return (
+    <div className="App">
+      <Header />
+      <main>
+        <GroceryForm addItem={addItem} />
 
-                <GroceryList 
-                    groceryList={groceryList}
-                    getGroceryList={getGroceryList}
-                />
-
-            </main>
-        </div>
-        );
+        <GroceryList
+          groceryList={groceryList}
+          getGroceryList={getGroceryList}
+        />
+      </main>
+    </div>
+  );
 }
 
 export default App;
