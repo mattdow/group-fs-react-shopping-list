@@ -1,5 +1,7 @@
+import GroceryItem from '../GroceryItem/GroceryItem'
 import axios from "axios";
 import getGroceryList from '../App/App.jsx'
+
 
 
 function GroceryList({groceryList, getGroceryList}) {
@@ -38,9 +40,10 @@ function GroceryList({groceryList, getGroceryList}) {
         <button onClick={resetList}>Reset</button>
         <ul>
             { groceryList.map(item => (
-                <li key={item.id}>
-                    Item:{item.item} Qty:{item.quantity} Unit:{item.unit} Purchased:{item.purchased}
-                </li>
+                <GroceryItem
+                    item={item}
+                    key={item.id}
+                    getGroceryList={getGroceryList} />
             )) 
             }
         </ul>
