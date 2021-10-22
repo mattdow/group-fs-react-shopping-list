@@ -1,4 +1,5 @@
 const express = require('express');
+const { Pool } = require('pg');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
@@ -33,6 +34,34 @@ router.post('/', (req, res) => {
             res.sendStatus(500);
         });
 });
+
+//DELETE grocery list
+router.delete('/', (req, res) => {
+    const sqlText = 'DELETE FROM list'
+
+    pool.query(sqlText)
+    .then((result) => {
+        res.sendStatus(201);
+    })
+    .catch((error) => {
+        console.log(`Error deleting list`, error);
+        res.sendStatus(500);
+    });
+})
+
+//PUT grocery list
+router.put('/', (req, res) => {
+     const sqlText = 'UPDATE list SET purchased = FALSE;'
+
+pool.query(sqlText)
+.then((result) => {
+    res.sendStatus(201);
+})
+.catch((err) => {
+    console.log(`Error updating`, err);
+    res.sendStatus(500);
+})
+})
 
 module.exports = router;
 
