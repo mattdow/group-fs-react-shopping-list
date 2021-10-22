@@ -42,8 +42,6 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <p>Under Construction...</p>
-
                 <GroceryForm addItem={addItem} />
 
                 <GroceryList 
