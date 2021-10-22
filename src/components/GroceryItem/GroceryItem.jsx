@@ -4,10 +4,10 @@ import './GroceryItem.css';
 
 function GroceryItem ({item, getGroceryList}) {
 
-    const deleteItem = () => {
-        let idToDelete = item.id;
-        console.log();
-    }
+    // const deleteItem = () => {
+    //     let idToDelete = item.id;
+    //     console.log();
+    // }
 
 
     return (
@@ -16,20 +16,13 @@ function GroceryItem ({item, getGroceryList}) {
             <p>{item.item}</p>
             <p>{item.quantity} {item.unit}</p>
             <p>
-            <button>Buy</button>
-            <button>Remove</button>
+                {item.purchased
+                    ? `Purchased`
+                    : <><button>Buy</button><button>Remove</button></>
+                }   
             </p>
         </div>
-        
-        
-    
-
     )
-
-
-
-
-
 }
 
 export default GroceryItem;
