@@ -19,10 +19,23 @@ function GroceryList({groceryList, getGroceryList}) {
     })
     }
 
+    const resetList = () => {
+        console.log('clicked reset');
+        axios({
+            method: "PUT",
+            url: '/list'
+        }).then ((response) => {
+            console.log('successfully reset', response);
+            getGroceryList();
+        }).catch ((error) => {
+            console.log('error', error); 
+        })
+    }
+
     return (
         <>
         <button onClick={deleteList}>Delete</button>
-        {/* <button onClick={resetList}>Reset</button> */}
+        <button onClick={resetList}>Reset</button>
         <ul>
             { groceryList.map(item => (
                 <li key={item.id}>
