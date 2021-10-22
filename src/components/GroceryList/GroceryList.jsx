@@ -1,4 +1,4 @@
-
+import GroceryItem from '../GroceryItem/GroceryItem'
 
 
 function GroceryList({groceryList, getGroceryList}) {
@@ -7,9 +7,10 @@ function GroceryList({groceryList, getGroceryList}) {
     return (
         <ul>
             { groceryList.map(item => (
-                <li key={item.id}>
-                    Item:{item.item} Qty:{item.quantity} Unit:{item.unit} Purchased:{item.purchased}
-                </li>
+                <GroceryItem
+                    item={item}
+                    key={item.id}
+                    getGroceryList={getGroceryList} />
             )) 
             }
         </ul>

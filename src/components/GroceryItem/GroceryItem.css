@@ -1,0 +1,14 @@
+.grocery-item {
+  height: 200px;
+  width: 200px; 
+  margin-right: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 10%; 
+  justify-content: center;
+}
+
+p {
+  text-align: center;
+}
