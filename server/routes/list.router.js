@@ -34,5 +34,19 @@ router.post('/', (req, res) => {
         });
 });
 
+//DELETE grocery list
+router.delete('/', (req, res) => {
+    const sqlText = 'DELETE FROM list'
+
+    pool.query(sqlText)
+    .then((result) => {
+        res.sendStatus(201);
+    })
+    .catch((error) => {
+        console.log(`Error deleting list`, error);
+        res.sendStatus(500);
+    });
+})
+
 module.exports = router;
 
