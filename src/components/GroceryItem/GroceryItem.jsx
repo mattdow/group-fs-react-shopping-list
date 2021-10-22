@@ -43,7 +43,7 @@ function GroceryItem ({item, getGroceryList}) {
             <p>
                 {item.purchased
                     ? `Purchased`
-                    : <><button onCLick={purchaseItem}>Buy</button><button onClick={deleteItem}>Remove</button></>
+                    : <><button onClick={purchaseItem}>Buy</button><button onClick={deleteItem}>Remove</button></>
                 }   
             </p> 
         </div> 
